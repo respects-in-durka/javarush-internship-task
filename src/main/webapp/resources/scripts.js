@@ -76,7 +76,7 @@ function loadContent(root, suffix, currentPage) {
     window.scrollTo(500, 100);
 }
 
-function Get(requestUrl) {
+function get(requestUrl) {
     let Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("GET", requestUrl, false);
     Httpreq.send(null);
@@ -418,7 +418,3 @@ function processDelete(root, id) {
     Delete(root + "/rest/players/" + id);
     processSearch(root, 1);
 }
-
-    
-        
-     
