@@ -1,7 +1,7 @@
 function loadContent(root, suffix, currentPage) {
 
-    let objects = JSON.parse(Get(root + "/rest/players" + suffix).responseText);
-    let playersCount = Get(root + "/rest/players/count" + suffix).responseText;
+    let objects = JSON.parse(get(root + "/rest/players" + suffix).responseText);
+    let playersCount = get(root + "/rest/players/count" + suffix).responseText;
     document.getElementById("count").innerText = "Players found: " + playersCount;
     let table = document.getElementById("mainTable");
     table.innerHTML = "";
@@ -218,7 +218,7 @@ function createPaging(playersInPage, playersSummary, currentPage) {
 }
 
 function editButtonClick(root, element, id) {
-    let objectToUpdate = JSON.parse(Get(root + "/rest/players/" + id).responseText);
+    let objectToUpdate = JSON.parse(get(root + "/rest/players/" + id).responseText);
     if (document.body.contains(document.getElementById("update" + id))) {
         document.getElementById("update" + id).remove();
         return;
